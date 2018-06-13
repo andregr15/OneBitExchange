@@ -1,3 +1,18 @@
+exchange = ->
+  $.ajax '/convert',
+    type: 'GET'
+    dataType: 'json'
+    data: {
+            source_currency: $("#source_currency").val(),
+            target_currency: $("#target_currency").val(),
+            amount: $("#amount").val()
+          }
+    error: (jqXHR, textStatus, errorThrown) ->
+      alert textStatus
+    success: (data, text, jqXHR) ->
+      $('#result').val(data.value)
+  return false
+
 $(document).ready ->
   $('form').submit ->
     if $('form').attr('action') == '/convert'
@@ -14,25 +29,17 @@ $(document).ready ->
     $('select').formSelect()
     
     if($('#amount').val() > 0)
-      return exchange()
-    return
+      exchange()
+    return false
 
   $('#amount').keyup ->
     setTimeout (->
-      return exchange()
-    ), 300
+      exchange()
+    ), 500
+    return false
 
-exchange = ->
-  $.ajax '/convert',
-    type: 'GET'
-    dataType: 'json'
-    data: {
-            source_currency: $("#source_currency").val(),
-            target_currency: $("#target_currency").val(),
-            amount: $("#amount").val()
-          }
-    error: (jqXHR, textStatus, errorThrown) ->
-      alert textStatus
-    success: (data, text, jqXHR) ->
-      $('#result').val(data.value)
-  return false
+  $('#amount').change ->
+    setTimeout (->
+      exchange()
+    ), 500
+    return false

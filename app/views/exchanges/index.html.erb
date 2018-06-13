@@ -1,25 +1,19 @@
 <div class='container'>
   <div class='row main'>
-    <div class='col xl4 offset-xl1 s12'>
-      <div class='row'>
-        <div class='col l8 offset-l2 s12 center-align'>
-            <%= image_tag '/logo.png', class: 'responsive-img' %>
-        </div>    
-      </div>
+      <div class='col xl8 s12 center-align'>
+        <%= image_tag '/logo1.png', class: 'responsive-img' %>
+        
+        <div class='title-box'>
+          <div class='row'>
+            <h2 class='subtitle'>Converta facilmente suas Moedas</h2>
+            <h3 class='subtitle'>Para qualquer moeda do Mundo!</h3>
+          </div>
+        </div>
+    </div> 
 
-      <div class='row'>
-        <%= render 'shared/exchange_box' %>
-      </div>
+    <div class='col xl4 s12'>
+      <%= render 'shared/exchange_box' %>
     </div>
-
-    <div class='col xl6 offset-xl1 title-box'>
-      <div class='row'>
-        <h2 class='subtitle'>Converta facilmente suas Moedas</h2>
-      </div>
-
-      <div class='row'>
-        <h3 class='subtitle'>Para qualquer moeda do Mundo!</h3>
-      </div>
-    </div>
+    
   </div>
 </div>
