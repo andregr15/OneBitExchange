@@ -17,3 +17,12 @@ RSpec.configure do |config|
       }', headers: {})
   end
 end
+
+RSpec.configure do |config|
+  config.before(:each) do
+    stub_request(:get, /min-api.cryptocompare.com/)
+    .with(headers: {
+      'Accept'=>'*/*'
+    }).to_return(status:200, body: '{"BTC": 0.482}', headers: {})
+  end
+end
