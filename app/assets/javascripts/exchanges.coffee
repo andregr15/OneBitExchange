@@ -21,8 +21,8 @@ $(document).ready ->
   $('#btn_change_currencys').click ->
     source_currency = $('#source_currency').val()
     target_currency = $('#target_currency').val()
-    $('#source_currency').val(target_currency).change()
-    $('#target_currency').val(source_currency).change()
+    $('#source_currency').val(target_currency)
+    $('#target_currency').val(source_currency)
     $('select').formSelect()
     return false
   
