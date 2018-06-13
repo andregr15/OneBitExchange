@@ -13,8 +13,17 @@ $(document).ready ->
             alert textStatus
           success: (data, text, jqXHR) ->
             $('#result').val(data.value)
-        return false;
+        return false
 
 $(document).ready ->
   $('select').formSelect()
+  
+  $('#btn_change_currencys').click ->
+    source_currency = $('#source_currency').val()
+    target_currency = $('#target_currency').val()
+    $('#source_currency').val(target_currency).change()
+    $('#target_currency').val(source_currency).change()
+    $('select').formSelect()
+    return false
+  
   return
