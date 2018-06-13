@@ -1,15 +1,17 @@
 .exchange_box {
     .card {
         border: 0;
-        
+        border-radius: 10px;
+
         .card-title {
-            background-color: #878D99;
-            border-radius: 0;
+            text-shadow: 1px 0px 3px #000;
+            border-radius: 9.5px 9.5px 0 0;
             color: white;
-            font-weight: 700;
+            font-weight: 400;
+            height: 45px;
         }
 
-        .card-block {
+        .card-content {
             padding-top: 10px;
             padding: 20px;
 
@@ -19,8 +21,7 @@
             }
 
             .btn-exchange {
-                background-color: #5bc0de;
-                border-color: #5bc0de;
+                text-shadow: 1px 0px 3px #000;
                 border-radius: 0;
             }
         }
@@ -28,8 +29,8 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .card-header {
-        font-size: 25px;
+    .card-title {
+        font-size: 16px;
     }
 
     .title {
@@ -37,7 +38,7 @@
         font-size: 20px;
     }
 
-    .form-group {
+    .input-field {
         select {
             font-size: 20px;
             height: 50px !important;
@@ -50,10 +51,11 @@
     }
 
     #result {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .btn-exchange {
+        text-shadow: 1px 0px 3px #000;
         font-size: 20px;
     }
 }
