@@ -7,7 +7,7 @@ gem 'rest-client'
 gem 'webmock'
 
 # Sempre inclua
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 1.0.0.rc1'
 gem 'material_icons'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

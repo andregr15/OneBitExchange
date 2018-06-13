@@ -16,5 +16,5 @@ $(document).ready ->
         return false;
 
 $(document).ready ->
-  $('select').material_select()
+  $('select').formSelect()
   return
