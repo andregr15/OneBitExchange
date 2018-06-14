@@ -43,3 +43,9 @@ $(document).ready ->
       exchange()
     ), 500
     return false
+
+  $('#source_currency').change ->
+      exchange()
+
+  $('#target_currency').change ->
+      exchange()

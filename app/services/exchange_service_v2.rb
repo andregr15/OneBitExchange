@@ -13,7 +13,7 @@ class ExchangeServiceV2
       url = "https://min-api.cryptocompare.com/data/price?fsym=#{@source_currency}&tsyms=#{@target_currency}"
       res = RestClient.get url
 
-      value = JSON.parse(res.body)[@target_currency]
+      value = JSON.parse(res.body)[@target_currency].to_f      
       value * @amount
     rescue RestClient::ExceptionWithResponse => e
       e.response

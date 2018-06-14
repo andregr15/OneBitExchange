@@ -1,0 +1,47 @@
+<div class="col s12 l12 exchange_box">
+  <div class="card">
+    <div class="card-title center-align blue lighten-2">
+      Simule sua conversão
+    </div>
+
+    <div class="card-content">
+      <%= form_tag('/exchanges_v2/convert', method: :get, id: 'exchange_form') do %>
+        <div class="local_currency">
+          <div class="input-field">
+            <%= select_tag 'source_currency_v2', options_for_select(currency_list_v2, 'BRL'), id: 'source_currency_v2' %>
+            <label>Moeda local:</label>
+          </div>
+
+          <div class="input-field">
+            <input type="number" name="amount_v2" id="amount_v2" placeholder="Quantidade ($10)" step="any" required>
+          </div>
+        </div>
+
+        <div class="row center-align">
+          <button class="btn btn-exchange blue lighten-2" id="btn_change_currencys_v2" name="btn_change_currencys">
+            <i class="large material-icons ">autorenew</i>
+          </button>
+        </div>
+
+        <div class="destination_currency">
+          <div class="input-field">
+            <%= select_tag 'target_currency_v2', options_for_select(currency_list_v2, 'EUR'), id: 'target_currency_v2' %>
+            <label>Moeda Pretendida:</label>
+          </div>
+          
+          <div class="input-field">
+            <input type="text" name="result_v2" id="result_v2" placeholder="Resultado" readonly>
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <button type="submit" class="btn btn-exchange col s12">CONVERTER</button>
+        </div>
+      -->
+      <div class="row center-align">
+        <a href="https://min-api.cryptocompare.com/">API utilizada para fins de estudos</a>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
