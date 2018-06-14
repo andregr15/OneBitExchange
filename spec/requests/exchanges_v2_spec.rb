@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'ExchangesV2', type: :request do
   describe 'GET #exchanges_v2' do
     it 'returns http success' do
-      get exchanges_v2_index_path
+      get '/v2'
       expect(response).to have_http_status(200)
     end
   end
